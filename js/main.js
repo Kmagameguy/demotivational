@@ -1,11 +1,11 @@
 let lastQuote = null;
 
 function randContainerXSize() {
-    return ((Math.random()*400) + 350).toFixed();
+    return ((Math.random()*($(document).width()*0.6)) + ($(document).width()*0.35)).toFixed();
 }
 
 function randContainerYSize() {
-    return ((Math.random()*100) + 75).toFixed();
+    return ((Math.random()*($(document).height()*0.35)) + ($(document).height()*0.25)).toFixed();
 }
 
 function randDelay() {
@@ -44,7 +44,7 @@ function TextIcon(buffer) {
     this.size = randContainerXSize();
     this.position = 'absolute';
     this.left = randXPos(this.size) + 'px';
-    this.top = randYPos(this.size, buffer) + 'px';
+    this.top = randYPos(randContainerYSize(), buffer) + 'px';
     this.display = 'none';
     this.width = this.size + 'px';
     this.height = randContainerYSize() + 'px';
