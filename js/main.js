@@ -1,7 +1,11 @@
 let lastQuote = null;
 
-function randContainerSize() {
+function randContainerXSize() {
     return ((Math.random()*400) + 350).toFixed();
+}
+
+function randContainerYSize() {
+    return ((Math.random()*100) + 75).toFixed();
 }
 
 function randDelay() {
@@ -37,16 +41,16 @@ function getMotivation() {
 }
 
 function TextIcon(buffer) {
-    this.size = randContainerSize();
+    this.size = randContainerXSize();
     this.position = 'absolute';
     this.left = randXPos(this.size) + 'px';
     this.top = randYPos(this.size, buffer) + 'px';
     this.display = 'none';
     this.width = this.size + 'px';
-    this.height = this.size + 'px';
+    this.height = randContainerYSize() + 'px';
     this.color = randomTextColor();
     this.content = getMotivation();
-    this.fontSize = '2rem';
+    this.fontSize = '4vw';
     this.font = 'DM Serif Display';
 }
 
